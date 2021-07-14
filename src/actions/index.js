@@ -1,3 +1,5 @@
+/* eslint-disable no-sequences */
+/* eslint-disable no-unused-expressions */
 const CREATEBOOK = 'CREATE_BOOK';
 const REMOVEBOOK = 'REMOVE_BOOK';
 
@@ -6,9 +8,11 @@ const createbook = (book) => {
   book;
 };
 
-const removebook =(book)=>{
-    REMOVEBOOK,
-    book;
-}
+const removebook = (book) => {
+  REMOVEBOOK,
+  book;
+};
 
-export const {CREATEBOOK,REMOVEBOOK,createbook,removebook}
+export {
+  CREATEBOOK, REMOVEBOOK, createbook, removebook,
+};
