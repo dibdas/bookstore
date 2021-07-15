@@ -1,11 +1,14 @@
+/* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 
 class BooksList extends React.Component {
+  // eslint-disable-next-line no-useless-constructor
   constructor(props) {
     super(props);
   }
-  render {
-    return(
+
+  render() {
+    return (
       <div className="container">
         <div className="row">
           <div className="col">
@@ -24,10 +27,8 @@ class BooksList extends React.Component {
         </div>
       </div>
 
-
-    )
+    );
   }
-
-};
+}
 
 export default BooksList;
