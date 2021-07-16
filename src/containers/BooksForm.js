@@ -6,6 +6,11 @@ import React from 'react';
 class BooksForm extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      title:'',
+      category:'Horror'
+
+    }
   }
 
   render() {
