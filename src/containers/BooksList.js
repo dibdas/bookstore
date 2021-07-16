@@ -52,12 +52,8 @@ const mapStateToProps = (state) => {
     books: state.books
   };
 };
-const mapDispatchToProps = dispatch => {
-  return {
-    addItem: () => {
-      dispatch(addItem())
-    }
-  };
-};
+const mapDispatchToProps = () => ({
+    removebook: (book.Id) => dispatch(removebook(book.Id))
+});
 
-export default BooksList;
+export default connect(mapStateToProps,mapDispatchToProps)(BooksList);
