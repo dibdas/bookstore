@@ -1,59 +1,57 @@
-/* eslint-disable react/prefer-stateless-function */
+
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { removebook } from '../actions/index';
 import Book from '../components/Book';
 
-const BooksList = (props)=> {
-  const {removebook, books} =props
+const BooksList = (props) => {
+  const { removebook, books } = props;
 
-  handleRemoveBook = (book) => {
-    removebook(book.Id);
-  }
-
-  render() {
-   
-    return (
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <h3>Book Id</h3>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col">
-            <h3>Title</h3>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col">
-            <h3>Category</h3>
-          </div>
-        </div>
-        {books.map((book) => (
-          <Book
-            book={book}
-            key={book.Id}
-            handleRemoveBook={handleRemoveBook}
-          />
-        )) }
-      </div>
-
-    );
-  }
-}
-BooksList.propTypes = {
-  books: propTypes.arrayOf(propTypes.object).isRequired,
-  removebook: propTypes.func.isRequired,
-};
-
-const mapStateToProps = (state) => {
-  return {
-    books: state.books
+  const handleRemoveBook = (id) => {
+    removebook(id);
   };
+
+  return (
+    <div>
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <h3>Book Id</h3>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col">
+          <h3>Title</h3>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col">
+          <h3>Category</h3>
+        </div>
+        </div>
+      {books.map((book) => 
+        <Book
+          book={book}
+          key={book.Id}
+          handleRemoveBook={handleRemoveBook}
+        />
+      )}
+    </div>
+  );
 };
-const mapDispatchToProps = () => ({
-    removebook: (book.Id) => dispatch(removebook(book.Id))
+
+BooksList.propTypes = {
+  books: PropTypes.arrayOf(PropTypes.object).isRequired,
+  removebook: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  books: state.bookreducer.books,
 });
 
-export default connect(mapStateToProps,mapDispatchToProps)(BooksList);
+const mapDispatchToProps = (dispatch) => ({
+  removebook(Id) { dispatch(removebook(Id)); },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
