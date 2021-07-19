@@ -1,10 +1,10 @@
-import { CREATEBOOK, REMOVEBOOK } from '../actions/index';
+import { CREATE_BOOK, REMOVE_BOOK } from '../actions/index';
 
 const bookreducer = (state = [{ id: 1, title: 'test', category: 'cat' }], action) => {
   switch (action.type) {
-    case CREATEBOOK:
+    case CREATE_BOOK:
       return [...state, { id: Math.random, title: action.title, category: action.category }];
-    case REMOVEBOOK:
+    case REMOVE_BOOK:
       return [...state];
 
     default:

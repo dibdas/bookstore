@@ -1,12 +1,9 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 /* eslint-disable react/no-unused-state */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable no-useless-constructor */
-/* eslint-disable react/prefer-stateless-function */
+
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { createbook } from '../actions/index';
 
 class BooksForm extends React.Component {
@@ -15,8 +12,11 @@ class BooksForm extends React.Component {
     this.state = {
       input: '',
       title: '',
-      category: 'Horror',
+
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
@@ -30,6 +30,7 @@ class BooksForm extends React.Component {
       const { createbook } = this.props;
       const currentTitle = state.title;
       const currentCategory = state.input;
+      createbook(state.title, state.category);
       return {
         input: '',
         title: state.title.concat(currentTitle),
@@ -68,4 +69,8 @@ BooksForm.propTypes = {
   createbook: PropTypes.func.isRequired,
 };
 
-export default BooksForm;
+const mapDispatchToProps = (dispatch) => ({
+  createBook(title, category) { dispatch(createBook(title, category)); },
+});
+
+export default connect(mapDispatchToProps)(BooksForm);
