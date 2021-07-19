@@ -1,3 +1,5 @@
+/* eslint-disable no-labels */
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable no-sequences */
 /* eslint-disable no-unused-expressions */
 const CREATEBOOK = 'CREATE_BOOK';
@@ -8,9 +10,9 @@ const createbook = (book) => {
   book;
 };
 
-const removebook = (book) => {
+const removebook = (id) => {
   REMOVEBOOK,
-  book;
+  id;
 };
 
 export {

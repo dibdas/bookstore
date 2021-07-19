@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -13,30 +12,16 @@ const BooksList = (props) => {
   };
 
   return (
-    <div>
+
     <div className="container">
-      <div className="row">
-        <div className="col">
-          <h3>Book Id</h3>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col">
-          <h3>Title</h3>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col">
-          <h3>Category</h3>
-        </div>
-        </div>
-      {books.map((book) => 
+
+      {books.map((book) => (
         <Book
           book={book}
           key={book.Id}
           handleRemoveBook={handleRemoveBook}
         />
-      )}
+      ))}
     </div>
   );
 };
@@ -47,7 +32,7 @@ BooksList.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  books: state.bookreducer.books,
+  books: state.bookreducer,
 });
 
 const mapDispatchToProps = (dispatch) => ({
