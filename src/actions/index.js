@@ -1,18 +1,18 @@
-/* eslint-disable no-sequences */
-/* eslint-disable no-unused-expressions */
-const CREATEBOOK = 'CREATE_BOOK';
-const REMOVEBOOK = 'REMOVE_BOOK';
+const CREATE_BOOK = 'CREATE_BOOK';
+const REMOVE_BOOK = 'REMOVE_BOOK';
 
-const createbook = (book) => {
-  CREATEBOOK,
-  book;
-};
+const createbook = (title,
+  category) => ({
+  type: CREATE_BOOK,
+  title,
+  category,
+});
 
-const removebook = (book) => {
-  REMOVEBOOK,
-  book;
-};
+const removebook = (id) => ({
+  type: REMOVE_BOOK,
+  id,
+});
 
 export {
-  CREATEBOOK, REMOVEBOOK, createbook, removebook,
+  CREATE_BOOK, REMOVE_BOOK, createbook, removebook,
 };
