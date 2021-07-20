@@ -12,7 +12,11 @@ const removebook = (id) => ({
   type: REMOVE_BOOK,
   id,
 });
+const changefilter = (filter) =>({
+  type: CHANGE_FILTER,
+  filter,
+})
 
 export {
-  CREATE_BOOK, REMOVE_BOOK, createbook, removebook,
+  CREATE_BOOK, REMOVE_BOOK, CHANGE_FILTER, changefilter, createbook, removebook,
 };
