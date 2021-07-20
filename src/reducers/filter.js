@@ -1,10 +1,7 @@
 import { CHANGE_FILTER } from '../actions';
 
-const initialstate = () => {
-  'All';
-};
 
-const filterreducer = (state= initialstate,action) => {
+const filterreducer = (state = 'All', action) => {
 
     switch (action.type) {
         case: CHANGE_FILTER
