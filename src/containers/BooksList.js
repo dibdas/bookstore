@@ -9,7 +9,9 @@ import Book from '../components/Book';
 import CategoryFilter from '../components/CategoryFilter';
 
 const BooksList = (props) => {
-  const { removebook, books, changefilter } = props;
+  const {
+    removebook, books, changefilter, filter,
+  } = props;
 
   const handleFilterChange = (event) => {
     const filter = event.target.value;
@@ -42,11 +44,12 @@ BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
   removebook: PropTypes.func.isRequired,
   changefilter: PropTypes.func.isRequired,
+  filter: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   books: state.bookreducer,
-  filter: state.filterreducer,
+  filter: state.changeFilterReducer,
 });
 
 const mapDispatchToProps = (dispatch) => ({
