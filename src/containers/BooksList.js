@@ -1,9 +1,7 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { removebook, changefilter } from '../actions/index';
+import { removebook } from '../actions/index';
 
 import Book from '../components/Book';
 import CategoryFilter from '../components/CategoryFilter';
@@ -54,7 +52,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   removebook(Id) { dispatch(removebook(Id)); },
-  handleFilterChange(filter) { dispatch(handleFilterChange(filter)); },
 
 });
 
