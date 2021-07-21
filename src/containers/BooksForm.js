@@ -18,6 +18,11 @@ class BooksForm extends React.Component {
   handleTitleChange = (event) => {
     this.setState({
       title: event.target.value,
+    });
+  }
+
+  handleCategoryChange = (event) => {
+    this.setState({
       category: event.target.value,
     });
   }
@@ -37,7 +42,8 @@ class BooksForm extends React.Component {
           <h3>Add book</h3>
           <form className="form-label">
             <input value={title} onChange={(e) => this.handleTitleChange(e)} type="text" className="form-control" placeholder="bookname" />
-            <select className="form-select" id="category" onChange={this.handleChange}>
+            <select className="form-select" id="category" onChange={(e) => this.handleCategoryChange(e)}>
+              <option value="select">Select a category</option>
               {categories.map((value) => (
                 <option
                   key={value}
