@@ -9,22 +9,17 @@ const BooksList = (props) => {
   const {
     removebook, books, changeFilter, filter,
   } = props;
-
   const handleFilterChange = (event) => {
     const filter = event.target.value;
     changeFilter(filter);
   };
-
   const handleRemoveBook = (id) => {
     removebook(id);
   };
-
   return (
     <>
       <CategoryFilter handleFilterChange={(event) => handleFilterChange(event)} />
-
       <div className="container">
-
         {books.filter((book) => book.category === filter || filter === 'All').map((book) => (
           <Book
             book={book}
@@ -37,7 +32,7 @@ const BooksList = (props) => {
   );
 };
 BooksList.defaultProps = {
-  filter: '',
+  filter: 'All',
 };
 BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
@@ -45,16 +40,11 @@ BooksList.propTypes = {
   changeFilter: PropTypes.func.isRequired,
   filter: PropTypes.string,
 };
-
 const mapStateToProps = (state) => ({
   books: state.bookreducer,
-  filter: state.changeFilterReducer,
 });
-
 const mapDispatchToProps = (dispatch) => ({
-  removebook(Id) { dispatch(removebook(Id)); },
+  removebook: (Id) => { dispatch(removebook(Id)); },
   changeFilter: (filter) => { dispatch(changefilter(filter)); },
-
 });
-
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
