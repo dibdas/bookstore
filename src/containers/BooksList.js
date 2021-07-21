@@ -1,19 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { removebook } from '../actions/index';
-
+import { removebook, changefilter } from '../actions/index';
 import Book from '../components/Book';
 import CategoryFilter from '../components/CategoryFilter';
 
 const BooksList = (props) => {
   const {
-    removebook, books, changefilter, filter,
+    removebook, books, changeFilter, filter,
   } = props;
 
   const handleFilterChange = (event) => {
     const filter = event.target.value;
-    changefilter(filter);
+    changeFilter(filter);
   };
 
   const handleRemoveBook = (id) => {
@@ -37,12 +36,14 @@ const BooksList = (props) => {
     </>
   );
 };
-
+BooksList.defaultProps = {
+  filter: '',
+};
 BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
   removebook: PropTypes.func.isRequired,
-  changefilter: PropTypes.func.isRequired,
-  filter: PropTypes.func.isRequired,
+  changeFilter: PropTypes.func.isRequired,
+  filter: PropTypes.string,
 };
 
 const mapStateToProps = (state) => ({
@@ -52,6 +53,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   removebook(Id) { dispatch(removebook(Id)); },
+  changeFilter: (filter) => { dispatch(changefilter(filter)); },
 
 });
 
