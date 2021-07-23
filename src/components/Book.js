@@ -1,26 +1,22 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import '../styles/Book.css';
 
 const Book = ({ book, handleRemoveBook }) => (
   <>
 
     <div className="row ">
-      <div className="col-3">
-        <h5>{book.Id}</h5>
+      <div className="card">
+        <div className="card_left">
+          <div className="category_card col-3">
+            {book.category}
+          </div>
+          <div className="title_card col-3">
+            {book.title}
+          </div>
+        </div>
+        <button className="card__link" type="button" onClick={() => handleRemoveBook(book)}>Remove</button>
       </div>
-      <div className="col-3">
-        <h5>
-          title:
-          {book.title}
-        </h5>
-      </div>
-      <div className="col-3">
-        <h5>
-          category:
-          {book.category}
-        </h5>
-      </div>
-      <button className="card__link" type="button" onClick={() => handleRemoveBook(book)}>Remove</button>
     </div>
   </>
 );
