@@ -1,157 +1,46 @@
-.card{
-    
-        width: 75rem;
-        height: 9rem;
-        margin: 2.313rem 6.25rem 0;
-        padding: 2rem 9.188rem 1.625rem 1.688rem;
-        border-radius: 4px;
-        border: solid 1px #e8e8e8;
-        background-color: var(--white);
-        display: flex;
-      
+b
+
+#bookstore {
+  color: #0290ff;
+  font-size: 30px;
+  font-weight: 700;
+  padding-left: 60px;
 }
 
-.category_card {
-    width: 3.063rem;
-    height: 1.125rem;
-    margin: 0 2.438rem 0 0;
-    opacity: 0.5;
-    font-family: Montserrat;
-    font-size: 0.875rem;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: var(--black-two);
-  }
+.primary-color {
+  color: #0290ff;
+}
 
-  .title_card {
-        width: 12.313rem;
-        height: 1.813rem;
-        margin: 0.188rem 20.188rem 0 0;
-        font-family: RobotoSlab;
-        font-size: 1.375rem;
-        font-weight: bold;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: -0.2px;
-        color: var(--black-two);
-      
-  }
+.fa {
+  width: 2.9rem;
+  height: 1.8rem;
+  color: #0290ff;
+}
 
-  .author {
-    width: 6.688rem;
-    height: 1.188rem;
-    margin: 0.25rem 0 0;
-    font-family: RobotoSlab;
-    font-size: 0.875rem;
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #4386bf;
-  }
-  .comments {
-    width: 4.563rem;
-    height: 1.188rem;
-    margin: 0.188rem 0.938rem 0.125rem 0;
-    font-family: RobotoSlab;
-    font-size: 0.875rem;
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #4386bf;
-    border-right: 1px solid gray;
-  }
-  .remove {
-    border: none;
-    padding: 2px 10px 2px 0;
-    margin-right: 15px;
-    color: #4386bf;
-    background: transparent;
-    font-family: 'Roboto Slab', serif;
-    font-size: 14px;
-    border-right: 2px solid #e8e8e8;
-    cursor: pointer;
+.oval-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 
-  }
+.text {
+  width: 50%;
+  font-size: 44px;
+}
 
-  .edit {
-    border: none;
-    padding: 2px 10px 2px 0;
-    margin-right: 15px;
-    color: #4386bf;
-    background: transparent;
-    font-family: 'Roboto Slab', serif;
-    font-size: 14px;
-    cursor: pointer;
 
-  }
+.first {
+  margin-left: 10px;
+}
 
-  .list {
-      display: flex;
-  }
 
-.card__mid {
-    flex: 1;
-    padding-right: 10px;
-    border-right: 2px solid #e8e8e8;
-  }
-  
-  .progress {
-    display: flex;
-    align-items: center;
-  }
-  
-  .progress-ring {
-    border: 5px solid #e8e8e8;
-    width: 61px;
-    height: 61px;
-    border-radius: 90px;
-    position: relative;
-    margin-right: 15px;
-  }
-  
-  .progress-ring__wrapper {
-    position: absolute;
-    content: "";
-    top: -5px;
-    left: -5px;
-    width: inherit;
-    height: inherit;
-    transform: rotate(-95deg);
-  }
-  
-  .progress-ring__circle {
-    stroke: #307bbe;
-    stroke-width: 5px;
-    stroke-dasharray: 140;
-  }
-  
-  .progress__percent {
-    font-size: 32px;
-    color: #121212;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-  }
-  
-  .progress__status {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    font-size: 14px;
-    color: #121212;
-    opacity: 0.5;
-  }
-  .Oval-2 {
-    width: 4.25rem;
-    height: 4.25rem;
-    border-style: solid;
-    border-width: 5px;
-    border-image-source: linear-gradient(to bottom, var(--medium-blue), var(--dodger-blue));
-    border-image-slice: 1;
-  }
+.btn:not(:first-of-type) {
+  border-left: 1px solid #e8e8e8;
+}
+
+
+.chapter {
+  color: #969696;
+}

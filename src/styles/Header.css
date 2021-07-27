@@ -1,77 +1,35 @@
-
-
 .navbar {
-    width: 80rem;
-    height: 5.94rem;
-    margin: 0 0 2.376rem;
-    padding: 1.438rem 6.188rem 1.688rem 6.25rem;
-    border: solid 1px skyblue;
-    display: flex;
-    justify-content: space-between;
-   
+  width: 92rem;
+  height: 5.94rem;
+  margin: 0 0 2.376rem;
+  padding: 1.438rem 6.188rem 1.688rem 4.25rem;
+  display: flex;
+  justify-content: space-between;
   }
-  .left-container{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border: solid 1px skyblue;
-  }
-  .menu{
-      border: solid 1px skyblue;
-  }
-  
-.items{
-    display: flex;
-    list-style-type:none;
-    justify-content: space-between;
-    border: solid 1px green;
-}
 
 #bookstore {
-    width: 15rem;
-    height: 2.313rem;
-    margin: 0.375rem 2.938rem 0.125rem 0;
-    font-family: Montserrat;
-    font-size: 1.875rem;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: skyblue;
+  width: 15rem;
+  height: 2.313rem;
+  margin: 0.375rem 2.938rem 0.125rem 0;
+  font-family: Montserrat;
+  font-size: 1.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: skyblue;
   }
-  .books{
-        width: 3.688rem;
-        height: 1rem;
-        margin: 1.125rem 2.563rem 0.688rem 0;
-        font-family: Montserrat;
-        font-size: 0.813rem;
-        letter-spacing: 1.9px;
-        color: var(--black-two);
-      
+
+.books{
+  font-family: Montserrat;
+  font-size: 0.813rem;
+  margin: 1.125rem 2.563rem 0.688rem 0;
   }
+  
   .categories {
-    width: 6.563rem;
-    height: 1rem;
-    margin: 1.125rem 10rem 0.688rem 2.563rem;
-    opacity: 0.5;
-    font-family: Montserrat;
-    font-size: 0.813rem;
-    letter-spacing: 1.9px;
-    color: var(--black-two);
-  }
-
-  .right_user{
-      border: 1px solid black;
-
-  }
-
-  .user_image {
-    border-radius: 100px;
-    width: 50px;
-    height: 50px;
-    padding: 10px;
-    margin-top: 1em;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    border: solid 1px black;
+  width: 6.563rem;
+  height: 1rem;
+  font-family: Montserrat;
+  margin: 1.125rem 2.563rem 0.688rem 0;
   }

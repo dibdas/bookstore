@@ -38,7 +38,7 @@ class BooksForm extends React.Component {
       const categories = ['Action', 'Biography', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
       const { title } = this.state;
       return (
-        <div className="container border border -1">
+        <div className="container  border-top pt-4 mb-2">
           <h3>Add book</h3>
           <div className="row d-flex justify-content-between">
             <div className="col-6">
@@ -57,7 +57,7 @@ class BooksForm extends React.Component {
                 ))}
               </select>
             </div>
-            <div className="col-3 d-flex flex-col align-items-center ml-2 border border-1 text-center ">
+            <div className="col-3 d-flex flex-col align-items-center ml-2  text-center ">
               <button style={{ backgroundColor: '#0290ff', color: 'white' }} onClick={this.handleSubmit} type="button" className=" d-flex btn text-center px-5">ADD BOOK    </button>
             </div>
           </div>
