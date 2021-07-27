@@ -1,6 +1,19 @@
 import { CREATE_BOOK, REMOVE_BOOK } from '../actions/index';
 
-const bookreducer = (state = [{ id: 1, title: 'test', category: 'cat' }], action) => {
+const defaultState = [
+  {
+    id: Math.random(),
+    title: 'Tesla',
+    category: 'Bio',
+  },
+  {
+    id: Math.random(),
+    title: 'HomoSapiens',
+    category: 'History',
+  },
+];
+
+const bookreducer = (state = defaultState, action) => {
   switch (action.type) {
     case CREATE_BOOK:
       return [...state, { id: Math.random, title: action.title, category: action.category }];

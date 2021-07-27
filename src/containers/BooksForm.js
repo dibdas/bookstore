@@ -11,43 +11,39 @@ class BooksForm extends React.Component {
     this.state = {
       input: '',
       title: '',
-
     };
-
-    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
+  handleTitleChange = (event) => {
     this.setState({
       title: event.target.value,
+    });
+  }
+
+  handleCategoryChange = (event) => {
+    this.setState({
       category: event.target.value,
     });
   }
 
-    handleSubmit=(state) => {
+    handleSubmit=(e) => {
+      e.preventDefault();
       const { createBook } = this.props;
-      const currentTitle = state.title;
-      const currentCategory = state.input;
-      createBook(state.title, state.category);
-      return {
-        input: '',
-        title: state.title.concat(currentTitle),
-        category: state.category.concat(currentCategory),
-      };
+      const { title, category } = this.state;
+      createBook(title, category);
     };
 
     render() {
       const categories = ['Action', 'Biography', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
       const { title } = this.state;
-
       return (
         <div className="container">
           <h3>Add book</h3>
-
           <form className="form-label">
-            <input value={title} onChange={this.handleChange} type="text" className="form-control" placeholder="bookname" />
-            <select className="form-select" id="category" onChange={this.handleChange}>
+            <input value={title} onChange={(e) => this.handleTitleChange(e)} type="text" className="form-control" placeholder="bookname" />
+            <select className="form-select" id="category" onChange={(e) => this.handleCategoryChange(e)}>
+              <option value="select">Select a category</option>
               {categories.map((value) => (
                 <option
                   key={value}
@@ -63,13 +59,10 @@ class BooksForm extends React.Component {
       );
     }
 }
-
 BooksForm.propTypes = {
   createBook: PropTypes.func.isRequired,
 };
-
 const mapDispatchToProps = (dispatch) => ({
   createBook: (title, category) => { dispatch(createbook(title, category)); },
 });
-
-export default connect(mapDispatchToProps)(BooksForm);
+export default connect(null, mapDispatchToProps)(BooksForm);
