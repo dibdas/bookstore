@@ -4,7 +4,7 @@ const defaultState = [
   {
     id: Math.random(),
     title: 'Tesla',
-    category: 'Bio',
+    category: 'Biography',
   },
   {
     id: Math.random(),

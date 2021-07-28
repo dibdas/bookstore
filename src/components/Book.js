@@ -1,6 +1,5 @@
 import React from 'react';
 import propTypes from 'prop-types';
-// import '../styles/Book.css';
 import 'react-circular-progressbar/dist/styles.css';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-bootstrap';
