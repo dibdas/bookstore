@@ -8,6 +8,7 @@ const BooksList = (props) => {
   const {
     removebook, books, filter,
   } = props;
+
   const handleRemoveBook = (id) => {
     removebook(id);
   };

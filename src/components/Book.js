@@ -14,7 +14,7 @@ const Book = ({ book, handleRemoveBook }) => (
       </div>
       <div className=" ">
         <button style={{ color: '#0290ff' }} className="btn" type="button">Comments</button>
-        <button style={{ color: '#0290ff' }} className="btn" type="button" onClick={() => handleRemoveBook(book)}>Remove</button>
+        <button style={{ color: '#0290ff' }} className="btn" type="button" onClick={() => handleRemoveBook(book.id)}>Remove</button>
         <button style={{ color: '#0290ff' }} className="btn" type="button">Edit</button>
       </div>
     </div>
@@ -25,20 +25,20 @@ const Book = ({ book, handleRemoveBook }) => (
         </div>
         <div className="col-4 text-center d-flex flex-column align-items-center">
           <span className="text-percentage d-block fs-1">{`${23}%`}</span>
-          <span>Completed</span>
+          <span className="text-secondary">Completed</span>
         </div>
       </div>
     </div>
     <div className="col-2 d-flex flex-column align-items-start ">
-      <p className="chapter-current">CURRENT CHAPTER</p>
-      <p>CHAPTER 16</p>
+      <p className="chapter-current text-secondary">CURRENT CHAPTER</p>
+      <p className="text-secondary">CHAPTER 16</p>
       <button style={{ backgroundColor: '#0290ff', color: 'white' }} type="button" className="btn w-100">UPDATE PROGRESS</button>
     </div>
   </div>
 );
 Book.propTypes = {
   book: propTypes.shape({
-    Id: propTypes.number.isRequired,
+    id: propTypes.number.isRequired,
     title: propTypes.string.isRequired,
     category: propTypes.string.isRequired,
   }).isRequired,
