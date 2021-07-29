@@ -13,9 +13,9 @@ const Book = ({ book, handleRemoveBook }) => (
         <p>Author</p>
       </div>
       <div className="">
-        <button className="btn" type="button">Comments</button>
-        <button className="btn" type="button" onClick={() => handleRemoveBook(book)}>Remove</button>
-        <button className="btn" type="button">Edit</button>
+        <button style={{ color: '#0290ff' }} className="btn" type="button">Comments</button>
+        <button style={{ color: '#0290ff' }} className="btn" type="button" onClick={() => handleRemoveBook(book)}>Remove</button>
+        <button style={{ color: '#0290ff' }} className="btn" type="button">Edit</button>
       </div>
     </div>
     <div className="col-2 ">
