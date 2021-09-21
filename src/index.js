@@ -6,6 +6,8 @@ import { createStore } from 'redux';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import rootReducer from './reducers';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/font-awesome/css/font-awesome.min.css';
 
 const store = createStore(rootReducer);
 ReactDOM.render(

@@ -4,12 +4,17 @@ const defaultState = [
   {
     id: Math.random(),
     title: 'Tesla',
-    category: 'Bio',
+    category: 'Biography',
   },
   {
     id: Math.random(),
     title: 'HomoSapiens',
     category: 'History',
+  },
+  {
+    id: Math.random(),
+    title: 'The Hunger Games',
+    category: 'Action',
   },
 ];
 
@@ -18,7 +23,7 @@ const bookreducer = (state = defaultState, action) => {
     case CREATE_BOOK:
       return [...state, { id: Math.random, title: action.title, category: action.category }];
     case REMOVE_BOOK:
-      return [...state];
+      return state.filter((book) => book.id !== action.id);
 
     default:
       return state;

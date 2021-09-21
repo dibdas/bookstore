@@ -1,29 +1,44 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import 'react-circular-progressbar/dist/styles.css';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-bootstrap';
 
 const Book = ({ book, handleRemoveBook }) => (
-  <div className="row">
-    <div className="col-3">
-      <h5>{book.Id}</h5>
+  <div className="row my-5 py-3 book justify-content-between align-items-center mt-3 bg-white border border-1 ">
+    <div className="col-4 d-flex flex-column align-items-start pl-3">
+      <div className="d-flex flex-column align-items-start  ">
+        <h6>{book.category}</h6>
+        <h4>{book.title}</h4>
+        <p style={{ color: '#0290ff' }}>Author</p>
+      </div>
+      <div className=" ">
+        <button style={{ color: '#0290ff' }} className="btn" type="button">Comments</button>
+        <button style={{ color: '#0290ff' }} className="btn" type="button" onClick={() => handleRemoveBook(book.id)}>Remove</button>
+        <button style={{ color: '#0290ff' }} className="btn" type="button">Edit</button>
+      </div>
     </div>
     <div className="col-3">
-      <h5>
-        title:
-        {book.title}
-      </h5>
+      <div className="oval-2 d-flex ">
+        <div className="circular col-4">
+          <CircularProgressbar value={69} />
+        </div>
+        <div className="col-4 text-center d-flex flex-column align-items-center">
+          <span className="text-percentage d-block fs-1">{`${23}%`}</span>
+          <span className="text-secondary">Completed</span>
+        </div>
+      </div>
     </div>
-    <div className="col-3">
-      <h5>
-        category:
-        {book.category}
-      </h5>
+    <div className="col-2 d-flex flex-column align-items-start ">
+      <p className="chapter-current text-secondary">CURRENT CHAPTER</p>
+      <p className="text-secondary">CHAPTER 16</p>
+      <button style={{ backgroundColor: '#0290ff', color: 'white' }} type="button" className="btn w-100">UPDATE PROGRESS</button>
     </div>
-    <button className="card__link" type="button" onClick={() => handleRemoveBook(book)}>Remove</button>
   </div>
 );
 Book.propTypes = {
   book: propTypes.shape({
-    Id: propTypes.number.isRequired,
+    id: propTypes.number.isRequired,
     title: propTypes.string.isRequired,
     category: propTypes.string.isRequired,
   }).isRequired,
